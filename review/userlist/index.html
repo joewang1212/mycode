@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>用户列表</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+
+    <script type="text/x-template" id="criminalDropdownTpl">
+        <ul v-if="isShow" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation" v-for='(t,idx) in criminalTypes' @click.stop.prevent='criminalTypeSelect(idx)' v-bind:class="{ disabled: criminalTypeIdx==idx}">
+                <a role="menuitem" tabindex="-1" href="#">{{t.name}}</a>
+            </li>
+        </ul>
+    </script>
+
+    <div id="app">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>案例编号</th>
+                    <th>监控时间</th>
+                    <th>类型</th>
+                    <th>主体名称</th>
+                    <th>证件号码</th>
+                    <th class="criminal-type" v-on:click="showDropdown" v-bind:class="{'link-blue':criminalTypeIdx!=0}">{{criminalTypes[criminalTypeIdx].title}}
+                        <span class="caret"></span>
+                        <criminal-dropdown :criminal-type-idx="criminalTypeIdx" :criminal-types="criminalTypes" :is-show="isShowDropdown" @on-hide-dropdown="hideDropdown" />
+                    </th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="user in users">
+                    <td class='blue'>{{user.id}}</td>
+                    <td>{{user.time}}</td>
+                    <td>{{user.type}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.IDCard}}</td>
+                    <td class="blue">{{user.ctype}}</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

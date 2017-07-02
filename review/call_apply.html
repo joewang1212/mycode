@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="mytxt"></div>
+    <script>
+        // function add(x){
+        //     return x+1;
+        // }
+        // console.log(add.call(window,[1,2,3]));
+
+        /*
+        
+                function Obj(){
+                    this.value="obj";
+                }
+                var value="global";
+                function fun(){
+                    console.log(this.value);
+                }
+        
+                window.fun();//global
+                fun.call(window);//global
+                fun.call(document.getElementById("mytxt"));//undefined
+                fun.call(new Obj());//obj
+                window.fun();//global
+                */
+
+
+        /*
+                var func = new function () { this.a = "func" }
+                var myfunc = function (x) {
+                    var a = "myfunc";
+                    console.log(this.a);
+                    console.log(x);
+                }
+        
+                myfunc.call(func, "var");//func var
+                */
+
+    </script>
+</body>
+
+</html>

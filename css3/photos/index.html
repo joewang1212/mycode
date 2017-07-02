@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3 照片墙</title>
+    <style>
+    h1{
+        text-align: center;
+    }
+    body{
+        background-color:#eee;
+    }
+    .container{
+        width:960px;
+        height:450px;
+        margin:60px auto;
+    }
+    .container img{
+        width:250px;
+        height:200px;
+        padding:10px;
+        background-color:#fff;
+        border:1px solid #ddd;
+        position:absolute;
+        transition:2s;
+    }
+    .container img:hover{
+        transform:rotate(0deg) scale(1.2);
+        -webkit-transform:rotate(0deg) scale(1.2);
+        -moz-transform:rotate(0deg)scale(1.2);
+        box-shadow: 10px 10px 15px #ccc;
+        z-index:2;
+    }
+    .pic1{
+        top:100px;
+        left:400px;
+        transform:rotate(-30deg);
+    }
+    .pic2{
+        top:150px;
+        left:300px;
+        transform:rotate(30deg);
+    }
+
+    .pic3{
+        top:100px;
+        left:100px;
+        transform:rotate(90deg);
+    }
+    .pic4{
+        top:200px;
+        left:600px;
+        transform:rotate(270deg);
+    }
+    .pic5{
+        top:300px;
+        left:500px;
+        transform:rotate(180deg);
+    }
+    </style>
+</head>
+<body>
+    <h1>照片墙</h1>
+    <div class="container">
+        <img class="pic1" src="img/1.jpg" alt="">
+        <img class="pic2" src="img/2.jpg" alt="">
+        <img class="pic3" src="img/3.jpg" alt="">
+        <img class="pic4" src="img/4.jpg" alt="">
+        <img class="pic5" src="img/5.jpg" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>排序</title>
+</head>
+<body>
+    
+    <script>
+
+        var arr=randomArr(10,12);
+        printArr(arr);
+        bubbleDownSort(arr);
+        printArr(arr);
+
+        document.write("<br>");
+
+        var arr=randomArr(10,12);
+        printArr(arr);
+        bubbleUpSort(arr);
+        printArr(arr);
+
+        document.write("<br>");
+
+        var arr=randomArr(10,12);
+        printArr(arr);
+        selectSort(arr);
+        printArr(arr);
+
+        function bubbleUpSort(arr){
+            for(var i=0;i<arr.length-1;i++){
+                for(var j=arr.length-1;j>i;j--){
+                    if(arr[j]<arr[j-1]){
+                        swap(arr,j,j-1);
+                    }
+                }
+            }
+        }
+
+        function selectSort(arr){
+            var minIndex=0;
+            var minVal=0;
+            for(var i=0;i<arr.length-1;i++){
+                //选择一个最小的放在i这个位置
+                minIndex=i,minVal=arr[i];
+                for(var j=i+1;j<arr.length;j++){
+                    if(arr[j]<minVal){
+                        minVal=arr[j];
+                        minIndex=j;
+                    }
+                }
+                swap(arr,minIndex,i);
+
+            }
+        }
+
+        function bubbleDownSort(arr){
+            for(var i=0;i<arr.length-1;i++){
+                for(var j=0;j<arr.length-1-i;j++){
+                    if(arr[j]>arr[j+1]){
+                        swap(arr,j,j+1);
+                    }
+                }
+            }
+        }
+
+        function swap(arr,i,j){
+            var temp = arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+        }
+
+        function printArr(arr){
+            document.write(arr.join(" ")+"<br>");
+        }
+
+        function randomArr(m,n){
+            var arr=[];
+            for(var i=0;i<n;i++){
+                arr.push(Math.ceil(Math.random()*m));
+            }
+            return arr;
+        }
+    </script>
+</body>
+</html>

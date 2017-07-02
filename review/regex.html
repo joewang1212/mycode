@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+</head>
+
+<body>
+
+
+    <script>
+        
+        // var re = /a/i;
+        // console.log(re.test("A")); //true
+
+        // console.log("234aa".match(/\d*/));
+
+
+        // var str = "23423 2sf 9s0fasfjajkfasdjfasjfass000-0-00---sf=asf=sdfasf12";
+        // var reg = /\d+/g;
+        // console.log(str.match(reg));
+        
+        //解析url
+        // var url = "http://www.jianshu.com?name=sam&a=b&n";
+
+        //千分位
+        var parseThousands=/(\d{1,3})(?=(\d{3})+(?:$|\.))/g;
+        var num="18724032740174013487.2134234";
+        console.log(parseThousands.exec(num));
+        document.write(num.replace(parseThousands,"$1,"));
+
+        var str = "2016-12-16".replace(/(\d{4})-(\d{2})-(\d{2})/,"$2/$3/$1");
+        console.log(str);
+        //正向前瞻
+        var str = "a2*3v8df".replace(/\w(?!\d)/g,"X");
+        console.log(str);
+
+        // var reg = /java/;
+        // var reg = new RegExp('java');
+        // reg.test("java");
+        // "java".match(/java/);
+
+        //默认是贪婪模式 加?号不贪婪
+        document.write(/a{2,}?/.exec("aaa"));
+        document.write("<br>");
+
+        var reg=/(java)script and \1/;
+        // var reg=/javascript and java/;
+        console.log(reg.exec("javascript and java xx"));
+        var reg =/\bjava\b/;
+        console.log(reg.test('javax'));
+
+    </script>
+</body>
+
+</html>

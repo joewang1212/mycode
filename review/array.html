@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var uniqueES6=(arr)=>{
+            return Array.from(new Set(arr));
+        }
+        
+
+        var uniqueArr=(arr)=>{
+            var cache={};
+            return arr.filter((item)=>{
+                return cache[item]?false:(cache[item]=true);
+            });
+        }
+
+        var arr =randomArr(10,12);
+        printArr(arr);
+        arr = uniqueArr(arr);
+        printArr(arr);
+
+
+        var arr =randomArr(10,12);
+        printArr(arr);
+        arr = uniqueES6(arr);
+        printArr(arr);
+        
+
+        function printArr(arr) {
+            document.write(arr.join(" ") + "<br>");
+        }
+
+        function randomArr(m, n) {
+            var arr = [];
+            for (var i = 0; i < n; i++) {
+                arr.push(Math.ceil(Math.random() * m));
+            }
+            return arr;
+        }
+    </script>
+</body>
+
+</html>

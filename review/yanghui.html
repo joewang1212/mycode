@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>杨辉三角</title>
+</head>
+<body>
+    
+
+    <script>
+        function yanghui(n){
+            if(n==1){
+                document.write("1"+"<br/>");
+
+                return [1];
+            }
+
+            var arr =yanghui(n-1);
+            var _arr =[];
+            for(var i=0;i<n;i++){
+                if(i==0||i==n-1){
+                    _arr.push(1);
+                }else{
+                    _arr.push(arr[i-1]+arr[i]);
+                }
+                
+            }
+            document.write(_arr.join(" ")+"<br/>");
+            return _arr;
+        }
+
+        yanghui(10);
+
+    </script>
+</body>
+</html>

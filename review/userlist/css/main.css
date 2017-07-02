@@ -1,0 +1,27 @@
+.blue {
+    color: #70A2CC;
+}
+
+.criminal-type {
+    cursor: default;
+    position: relative;
+}
+
+.criminal-type .caret {
+    border-top-color: gray;
+}
+
+.dropdown-menu {
+    display: block;
+    border-radius: 0;
+    min-width: 105px;
+    margin: -4px 0 0 8px;
+}
+
+.dropdown-menu>li>a {
+    outline: none;
+}
+
+.link-blue {
+    color: #399FD0;
+}

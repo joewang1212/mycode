@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas图像处理</title>
+    <style>
+        body{
+            padding-top:100px;
+            text-align: center;
+            background-color:#666;
+        }
+        .demo{
+            border: 1px solid #ccc;
+        }
+        .range{
+            margin:20px auto;
+            display: block;
+            width:400px;
+        }
+        .watermark{
+            display: none;
+            margin:0 auto;
+            /*border:1px solid #aaa;*/
+            width:600px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas class="demo" id="demo" width="400" height="400"></canvas>
+    <input class="range" id="range" type="range" min="0.5" max="3.0" step="0.01" value="1.0">
+    <canvas id="watermark" class="watermark"></canvas>
+    <script>
+        var demo= document.getElementById("demo");
+        var slider= document.getElementById("range");
+        var watermark= document.getElementById("watermark");
+        var ctx = demo.getContext("2d");
+        var wmCtx = watermark.getContext("2d");
+        var img= new Image();
+        var width=ctx.canvas.width;
+        var height=ctx.canvas.height;
+
+        window.onload=function(){
+            img.src="img/2.jpg";
+            var scale=slider.value;
+
+            img.onload=function(){
+                // ctx.drawImage(img,0,0,width,height);
+                //源图像的位置到目标的位置
+                // ctx.drawImage(img,200,100,300,300,0,0,width/2,height);
+                drawImageByScale(scale);
+                //change 事件
+                slider.addEventListener("input",function(e){
+                    console.log(e.target.value);
+                    drawImageByScale(e.target.value);
+                });
+            }
+            //setup watermark canvas
+            wmCtx.font="bold 50px Arial";
+            wmCtx.lineWidth="1";
+            wmCtx.fillStyle="rgba(255,255,255,0.5)";
+            wmCtx.textBaseline="middle";
+            wmCtx.fillText("荞叶鬼才",20,50);
+        }
+
+        function drawImageByScale(scale){
+            ctx.clearRect(0,0,width,height);
+            var dx=width/2*(1-scale);
+            var dy=height/2*(1-scale);
+            ctx.drawImage(img,dx,dy,width*scale,height*scale);
+            ctx.drawImage(watermark,width-wmCtx.canvas.width,height-wmCtx.canvas.height);
+        }
+    </script>
+</body>
+</html>

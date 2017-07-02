@@ -1,0 +1,205 @@
+body{
+    background-color:#c13736;
+}
+header img{
+    width:100%;
+    height:3rem;
+}
+.jackpot{
+    margin:0 0.2rem;
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    background-color:#ffe6e6;
+    margin-bottom:0.3rem;
+    overflow: hidden;
+    font-size:0.24rem;
+    
+}
+.jackpot .lottery{
+    padding:0.1rem 0.2rem 0;
+    background-color:#fff;
+}
+.issueno{
+    color:#666666;
+    line-height:0.6rem;
+    position:relative;
+}
+.issueno:after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #979696;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+.issueno i{
+    margin-right:0.08rem;
+    padding-top:0.02rem;
+}
+
+.recommand>p{
+    color:#979696;
+    margin-top:0.2rem;
+}
+.recommand>p>em{
+    width:0;
+    height:0.2rem;
+    margin-right:0.08rem;
+    border-left:0.12rem solid #f2514a;
+    border-right:0.12rem solid #f2514a;
+    border-bottom:0.04rem solid transparent;
+    position:relative;
+}
+.recommand>p>em>i{
+    position:absolute;
+    top:0.04rem;
+    right:-0.08rem;
+    color:#fff;
+    font-size:0.16rem;
+    line-height:0.2rem;
+}
+
+.recommand{
+    position: relative;
+}
+.recommand>p{
+    display: inline-block;
+}
+.recommand ul{
+    font-size: 0;
+    margin:0.2rem 0;
+    display: inline-block;
+}
+.recommand ul.has-place{
+    margin-top:0.6rem;
+}
+.recommand .refresh i{
+    position:absolute;
+    right:0;
+    font-size:0.5rem;
+}
+.recommand .ball .place{
+    position:absolute;
+    left:0.1rem;;
+    top:-0.46rem;
+    color:#979696;
+}
+.recommand .ball{
+    display:inline-block;
+    margin:0 0.2rem 0.1rem 0;
+    width:0.5rem;
+    height:0.5rem;
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    color:#fff;
+    font-size:0.3rem;
+    text-align:center;
+    line-height:0.5rem;
+    position:relative;
+}
+.red{
+    background-color: #f2514a;
+}
+.blue{
+    background-color: #4493f4;
+}
+.bet{
+    padding-bottom:0.3rem;
+    position:relative;
+}
+.btnWrap{
+    margin-left:1.5rem;
+    width:auto;
+}
+.bet .btn{
+    width:100%;
+    height:0.56rem;
+    line-height:0.56rem;
+    color:#fff;
+    font-size:0.26rem;
+    border-radius: 0.1rem;
+    -webkit-border-radius: 0.1rem;
+    outline:none;
+    border-width:0;
+}
+.bet i{
+    position:absolute;
+    top:0;
+    left:0.8rem;
+    font-size:0.5rem;
+}
+.money-select{
+    position:absolute;
+    width:1.3rem;
+    height:0.56rem;
+    border-radius: 0.08rem;
+    -webkit-border-radius: 0.08rem;
+    color:#979696;
+    margin-right:0.2rem;
+    padding-left:0.1rem;
+    font-size:0.24rem;
+}
+.total{
+    color:#666;
+    height:0.7rem;
+    line-height:0.7rem;
+    text-align:center;
+}
+.total i{
+    margin-right:0.08rem;
+}
+.round-num{
+    font-size:0.24rem;
+    width:0.22rem;
+    height:0.3rem;
+    line-height:0.3rem;
+    border-radius: 0.05rem;
+    -webkit-border-radius: 0.05rem;
+    color:#fff;
+    text-align:center;
+    display: inline-block;
+    margin:0 0.02rem;
+}
+
+footer{
+    color:#8e2424;
+    margin:0 0.48rem;
+}
+footer h1{
+    font-size:0.3rem;
+    line-height: 0.72rem;
+    text-align:center;
+    position:relative;
+}
+footer h1:after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30%;
+    right: 0.1rem;
+    top: 0.36rem;
+    height: 1px;
+    background-color: #8e2424;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+footer h1:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 37%;
+    left: 0.1rem;
+    top: 0.36rem;
+    height: 1px;
+    background-color: #8e2424;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+footer p{
+    line-height:0.36rem;
+    font-size:0.24rem;
+}
